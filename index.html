@@ -227,6 +227,7 @@ Mais do que café, entregamos experiências sensoriais que impressionam clientes
        
        
       <!-- Choose Area Start -->
+       <section class="pelum-choose-area" data-scroll-index="3"></section>
       <section class="pelum-choose-area">
          <div class="container">
             <div class="row">
@@ -616,98 +617,106 @@ Mais do que café, entregamos experiências sensoriais que impressionam clientes
    Subscribe Area End -->
        
        
-      <!-- Contact Area Start -->
-      <section class="pelum-contact-area" data-scroll-index="6">
-         <div class="container">
+ <!-- Contact Area Start -->
+<section class="pelum-contact-area" data-scroll-index="6">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="site-heading wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
+          <h4>Contato</h4>
+          <h2>Fale com a gente</h2>
+          <span class="heading_overlay"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="contact-form wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.5s">
+          
+          <!-- Formulário com ID adicionado -->
+          <form id="contactForm">
             <div class="row">
-               <div class="col-lg-12">
-                  <div class="site-heading wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
-                     <h4>Contato</h4>
-                     <h2>Fale com a gente</h2>
-                     <span class="heading_overlay"></span>
-                  </div>
-               </div>
+              <div class="col-12 col-md-6">
+                <p>
+                  <input class="form-control" type="text" placeholder="Nome" id="name" required />
+                </p>
+              </div>
+              <div class="col-12 col-md-6">
+                <p>
+                  <input class="form-control" type="text" placeholder="Assunto" id="subject" required />
+                </p>
+              </div>
             </div>
+
             <div class="row">
-               <div class="col-lg-7">
-                  <div class="contact-form wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.5s">
-                     <form>
-                        <div class="row">
-                           <div class="col-12 col-md-6">
-                              <p>
-                                 <input class="form-control" type="text" placeholder="Nome" />
-                              </p>
-                           </div>
-                           <div class="col-12 col-md-6">
-                              <p>
-                                 <input class="form-control" type="text" placeholder="Assunto" />
-                              </p>
-                           </div>
-                        </div>
-                        <div class="row">
-                           <div class="col-lg-6">
-                              <p>
-                                 <input class="form-control" type="email" placeholder="E-mail" />
-                              </p>
-                           </div>
-                           <div class="col-lg-6">
-                              <p>
-                                 <input class="form-control" type="tel" placeholder="Telefone" />
-                              </p>
-                           </div>
-                        </div>
-                        <div class="row">
-                           <div class="col-lg-12">
-                              <p>
-                                 <textarea class="form-control" placeholder="Sua mensagem..."></textarea>
-                              </p>
-                           </div>
-                        </div>
-                        <div class="row">
-                           <div class="col-lg-12">
-                              <p>
-                                 <button type="submit" class="pelum-btn">Enviar Mensagem<span></span></button>
-                              </p>
-                           </div>
-                        </div>
-                     </form>
-<script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const formData = {
-    name: document.getElementById('name').value,
-    subject: document.getElementById('subject').value,
-    email: document.getElementById('email').value,
-    phone: document.getElementById('phone').value,
-    message: document.getElementById('message').value
-  };
-  
-  // URL Apps Script
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzsJSIDbjF8fpeZmkdmEaOLLuEdH86_mUh3avWpWOk24kJnSSjRjTxJJduI5tB2A95qYw/exec';
-  
-  fetch(scriptURL, {
-    method: 'POST',
-    body: JSON.stringify(formData),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.success) {
-      alert('Mensagem enviada com sucesso!');
-      document.getElementById('contactForm').reset();
-    } else {
-      alert('Erro ao enviar mensagem. Tente novamente.');
-    }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    alert('Erro ao enviar mensagem.');
-  });
-});
-</script>
+              <div class="col-lg-6">
+                <p>
+                  <input class="form-control" type="email" placeholder="E-mail" id="email" required />
+                </p>
+              </div>
+              <div class="col-lg-6">
+                <p>
+                  <input class="form-control" type="tel" placeholder="Telefone" id="phone" />
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12">
+                <p>
+                  <textarea class="form-control" placeholder="Sua mensagem..." id="message" required></textarea>
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12">
+                <p>
+                  <button type="submit" class="pelum-btn">Enviar Mensagem<span></span></button>
+                </p>
+              </div>
+            </div>
+          </form>
+
+          <!-- Script para enviar ao Google Sheets -->
+          <script>
+          const contactForm = document.getElementById('contactForm');
+
+          contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+              name: document.getElementById('name').value,
+              subject: document.getElementById('subject').value,
+              email: document.getElementById('email').value,
+              phone: document.getElementById('phone').value,
+              message: document.getElementById('message').value
+            };
+
+            // URL do Apps Script
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzsJSIDbjF8fpeZmkdmEaOLLuEdH86_mUh3avWpWOk24kJnSSjRjTxJJduI5tB2A95qYw/exec';
+
+            fetch(scriptURL, {
+              method: 'POST',
+              body: JSON.stringify(formData),
+              headers: { 'Content-Type': 'application/json' }
+            })
+            .then(response => response.json())
+            .then(data => {
+              if (data.success) {
+                alert('Mensagem enviada com sucesso!');
+                contactForm.reset();
+              } else {
+                alert('Erro ao enviar mensagem. Tente novamente.');
+              }
+            })
+            .catch(error => {
+              console.error('Erro:', error);
+              alert('Erro ao enviar mensagem.');
+            });
+          });
+          </script>
                   </div>
                </div>
                <div class="col-lg-5">
@@ -773,6 +782,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
                         <ul>
                            <li class="wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s"><a href="https://www.instagram.com/cafesmundo/"><i class="fa fa-instagram"></i></a></li>
                            <li class="wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.7s"><a href="https://www.linkedin.com/company/cafes-do-mundo/"><i class="fa fa-linkedin"></i></a></li>
+                           <li class="wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.7s"><a href="https://www.cafesdomundo.com"><i class="fa fa-shopping-bag"></i></a></li>
                         </ul>
                      </div>
                   </div>
