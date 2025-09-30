@@ -171,36 +171,39 @@
       <!-- Features Area End -->
        
        
-      <!-- About Area Start -->
-      <section class="pelum-about-area" data-scroll-index="2">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-6">
-                  <div class="about-left  wow fadeInLeft" data-wow-delay="0.5s">
-                     <img src="assets/img/about.png" alt="about" class="animation-jump" />
-                  </div>
-               </div>
-               <div class="col-lg-6">
-                  <div class="about-right  wow fadeInRight" data-wow-delay="0.5">
-                     <div class="about-heading">
-                        <h4>sobre nós</h4>
-                        <h2>O que nos torna a escolha certa para marcas que buscam sofisticação</h2>
-                        <span class="heading_overlay"></span>
-                     </div>
-                     Há mais de 5 anos, a Cafés do Mundo transforma o café em uma experiência de sofisticação, identidade e branding para empresas. Selecionamos grãos especiais de origens renomadas cuidadosamente escolhidas, criamos blends exclusivos e desenvolvemos embalagens personalizadas, tornando cada xícara um símbolo de status, hospitalidade e reconhecimento da marca.
-
-Mais do que café, entregamos experiências sensoriais que impressionam clientes, inspiram equipes e elevam eventos corporativos, unindo luxo, design e qualidade superior em cada detalhe.
-                     <ul>
-                        <li><i class="fa fa-check"></i> Cafés exclusivos</li>
-                        <li><i class="fa fa-check"></i> Excelência sensorial</li>
-                        <li><i class="fa fa-check"></i> Experiência corporativa premium</li>
-                        <li><i class="fa fa-check"></i> Fortalecimento de relacionamento</li>
-                     </ul>
-                  </div>
-               </div>
+ <!-- About Area Start -->
+<section class="pelum-about-area" data-scroll-index="2">
+   <div class="container">
+      <div class="row">
+         <!-- Imagem - No mobile vai para baixo (order-2) -->
+         <div class="col-lg-6 order-lg-1 order-2">
+            <div class="about-left wow fadeInLeft" data-wow-delay="0.5s">
+               <img src="assets/img/about.png" alt="about" class="animation-jump img-fluid" />
             </div>
          </div>
-      </section>
+         
+         <!-- Texto - No mobile vai para cima (order-1) -->
+         <div class="col-lg-6 order-lg-2 order-1">
+            <div class="about-right wow fadeInRight" data-wow-delay="0.5">
+               <div class="about-heading">
+                  <h4>sobre nós</h4>
+                  <h2>O que nos torna a escolha certa para marcas que buscam sofisticação</h2>
+                  <span class="heading_overlay"></span>
+               </div>
+               Há mais de 5 anos, a Cafés do Mundo transforma o café em uma experiência de sofisticação, identidade e branding para empresas. Selecionamos grãos especiais de origens renomadas cuidadosamente escolhidas, criamos blends exclusivos e desenvolvemos embalagens personalizadas, tornando cada xícara um símbolo de status, hospitalidade e reconhecimento da marca.
+
+Mais do que café, entregamos experiências sensoriais que impressionam clientes, inspiram equipes e elevam eventos corporativos, unindo luxo, design e qualidade superior em cada detalhe.
+               <ul>
+                  <li><i class="fa fa-check"></i> Cafés exclusivos</li>
+                  <li><i class="fa fa-check"></i> Excelência sensorial</li>
+                  <li><i class="fa fa-check"></i> Experiência corporativa premium</li>
+                  <li><i class="fa fa-check"></i> Fortalecimento de relacionamento</li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
       <!-- About Area End -->
        
        
@@ -227,8 +230,7 @@ Mais do que café, entregamos experiências sensoriais que impressionam clientes
        
        
       <!-- Choose Area Start -->
-       <section class="pelum-choose-area" data-scroll-index="3"></section>
-      <section class="pelum-choose-area">
+      <section class="pelum-choose-area" data-scroll-index="3"></section>
          <div class="container">
             <div class="row">
                <div class="col-lg-6">
@@ -634,89 +636,52 @@ Mais do que café, entregamos experiências sensoriais que impressionam clientes
       <div class="col-lg-7">
         <div class="contact-form wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.5s">
           
-          <!-- Formulário com ID adicionado -->
-          <form id="contactForm">
-            <div class="row">
-              <div class="col-12 col-md-6">
-                <p>
-                  <input class="form-control" type="text" placeholder="Nome" id="name" required />
-                </p>
-              </div>
-              <div class="col-12 col-md-6">
-                <p>
-                  <input class="form-control" type="text" placeholder="Assunto" id="subject" required />
-                </p>
-              </div>
-            </div>
+          <!-- Formulário corrigido -->
+<form id="contactForm"
+     action="https://formspree.io/f/mjkawajb"
+     method="POST">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <p>
+        <input class="form-control" type="text" placeholder="Nome" id="name" name="nome" required />
+      </p>
+    </div>
+    <div class="col-12 col-md-6">
+      <p>
+        <input class="form-control" type="text" placeholder="Assunto" id="subject" name="assunto" required />
+      </p>
+    </div>
+  </div>
 
-            <div class="row">
-              <div class="col-lg-6">
-                <p>
-                  <input class="form-control" type="email" placeholder="E-mail" id="email" required />
-                </p>
-              </div>
-              <div class="col-lg-6">
-                <p>
-                  <input class="form-control" type="tel" placeholder="Telefone" id="phone" />
-                </p>
-              </div>
-            </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <p>
+        <input class="form-control" type="email" placeholder="E-mail" id="email" name="email" required />
+      </p>
+    </div>
+    <div class="col-lg-6">
+      <p>
+        <input class="form-control" type="tel" placeholder="Telefone" id="phone" name="telefone" />
+      </p>
+    </div>
+  </div>
 
-            <div class="row">
-              <div class="col-lg-12">
-                <p>
-                  <textarea class="form-control" placeholder="Sua mensagem..." id="message" required></textarea>
-                </p>
-              </div>
-            </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <p>
+        <textarea class="form-control" placeholder="Sua mensagem..." id="message" name="mensagem" required></textarea>
+      </p>
+    </div>
+  </div>
 
-            <div class="row">
-              <div class="col-lg-12">
-                <p>
-                  <button type="submit" class="pelum-btn">Enviar Mensagem<span></span></button>
-                </p>
-              </div>
-            </div>
-          </form>
-
-          <!-- Script para enviar ao Google Sheets -->
-          <script>
-          const contactForm = document.getElementById('contactForm');
-
-          contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const formData = {
-              name: document.getElementById('name').value,
-              subject: document.getElementById('subject').value,
-              email: document.getElementById('email').value,
-              phone: document.getElementById('phone').value,
-              message: document.getElementById('message').value
-            };
-
-            // URL do Apps Script
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzsJSIDbjF8fpeZmkdmEaOLLuEdH86_mUh3avWpWOk24kJnSSjRjTxJJduI5tB2A95qYw/exec';
-
-            fetch(scriptURL, {
-              method: 'POST',
-              body: JSON.stringify(formData),
-              headers: { 'Content-Type': 'application/json' }
-            })
-            .then(response => response.json())
-            .then(data => {
-              if (data.success) {
-                alert('Mensagem enviada com sucesso!');
-                contactForm.reset();
-              } else {
-                alert('Erro ao enviar mensagem. Tente novamente.');
-              }
-            })
-            .catch(error => {
-              console.error('Erro:', error);
-              alert('Erro ao enviar mensagem.');
-            });
-          });
-          </script>
+  <div class="row">
+    <div class="col-lg-12">
+      <p>
+        <button type="submit" class="pelum-btn">Enviar Mensagem<span></span></button>
+      </p>
+    </div>
+  </div>
+</form>
                   </div>
                </div>
                <div class="col-lg-5">
